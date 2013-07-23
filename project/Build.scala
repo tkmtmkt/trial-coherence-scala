@@ -11,7 +11,6 @@ object ProjectBuild extends Build
       scalaVersion := "2.10.2",
       scalacOptions ++= Seq("-encoding", "UTF-8", "-deprecation", "-unchecked"),
       resolvers += Resolver.mavenLocal,
-      retrieveManaged := true,
       libraryDependencies ++= Seq(
         "junit" % "junit" % "4.10" % "test",
         "org.specs2" %% "specs2" % "1.11" % "test",
