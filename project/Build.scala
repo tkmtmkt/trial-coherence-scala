@@ -43,7 +43,7 @@ object ProjectBuild extends Build {
     )
 
     // カスタムタスク
-    val packageData = TaskKey[Unit]("package-data")
+    lazy val packageData = TaskKey[Unit]("package-data")
     def packageDataTask = packageData <<= (streams, PackageTask.packageDist, baseDirectory in main in Compile) map {
         (out, dist, mainDir) => {
             out.log.info("Copy resource files")
