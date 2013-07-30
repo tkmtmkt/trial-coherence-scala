@@ -4,12 +4,17 @@ study-coherence-scala
 Build
 -----
 
-./build package-data
-
+./sbtl package-data
+./gradlew jar
 
 ディレクトリ構成
 ----------------
+
 study-coherence-scala/
+├─gradle/
+│  └─wrapper/
+│      ├─gradle-wrapper.jar
+│      └─gradle-wrapper.properties
 ├─lib/
 ├─main/
 │  └─src/
@@ -20,14 +25,10 @@ study-coherence-scala/
 │      └─test
 │          └─scala/
 ├─project/
-│  ├─target/
 │  ├─build.properties
 │  ├─Build.scala
 │  └─Package.scala
-├─repository/
-│  └─cache/
 ├─sbt/
-│  ├─boot/
 │  ├─sbt-launch.jar
 │  └─sbt.boot.properties
 ├─src/
@@ -37,11 +38,12 @@ study-coherence-scala/
 │      ├─console.ps1
 │      ├─launch
 │      └─launch.ps1
-├─target/
 ├─.gitignore
-├─build
-├─build.bat
-└─README.md
+├─gradlew
+├─gradlew.bat
+├─README.md
+├─sbtl
+└─sbtl.bat
 
 
 <!-- vim: set ft=markdown ts=4 sw=4 et: -->
