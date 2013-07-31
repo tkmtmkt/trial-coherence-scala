@@ -1,26 +1,38 @@
-subprojects {
-    apply plugin: 'scala'
+defaultTasks 'build'
+apply plugin: 'application'
+mainClassName = "com.github.tkmtmkt.Main"
+
+allprojects {
     group = 'com.github.tkmtmkt'
     version = '1.0-SNAPSHOT'
 
     repositories {
         mavenCentral()
     }
+}
+
+subprojects {
+    apply plugin: 'scala'
+    //apply plugin: 'checkstyle'
+    //apply plugin: 'findbugs'
 
     dependencies {
-        compile fileTree(dir: '../lib', include: '*.jar')
+        compile fileTree(dir: "$rootDir/lib", include: '*.jar')
         compile 'org.scala-lang:scala-library:2.10.2'
         compile 'org.slf4j:slf4j-log4j12:1.7.5'
-        testCompile 'junit:junit:4.10'
-        testCompile 'org.specs2:specs2:1.11'
-        testCompile 'org.mockito:mockito-core:1.9.0'
+        testCompile 'junit:junit:4.+'
+        testCompile 'org.specs2:specs2_2.10:2.1'
+        testCompile 'org.mockito:mockito-core:1.9.5'
     }
 }
 
-project(':main') {
+dependencies {
+    runtime project(':main')
 }
 
 task wrapper(type: Wrapper) {
+    description = 'Generates Gradle wrapper scripts.'
     gradleVersion = '1.6'
 }
-// vim: ts=4 sw=4 et:
+
+//vim: ts=4 sw=4 et:

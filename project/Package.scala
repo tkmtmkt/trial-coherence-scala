@@ -51,7 +51,7 @@ object PackageTask {
       out.log.info("Create bin folder")
       val binDir = distDir / "bin"
       binDir.mkdirs()
-      IO.copyDirectory(base / "src/script", binDir)
+      IO.copyDirectory(base / "src/dist/bin", binDir)
 
       // chmod +x
       if(!System.getProperty("os.name","").contains("Windows")) {

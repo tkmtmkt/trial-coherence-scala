@@ -11,10 +11,6 @@ Build
 ----------------
 
 study-coherence-scala/
-├─gradle/
-│  └─wrapper/
-│      ├─gradle-wrapper.jar
-│      └─gradle-wrapper.properties
 ├─lib/
 ├─main/
 │  └─src/
@@ -24,13 +20,6 @@ study-coherence-scala/
 │      │  └─scala/
 │      └─test
 │          └─scala/
-├─project/
-│  ├─build.properties
-│  ├─Build.scala
-│  └─Package.scala
-├─sbt/
-│  ├─sbt-launch.jar
-│  └─sbt.boot.properties
 ├─src/
 │  └─script/
 │      ├─cache-server.ps1
@@ -39,9 +28,28 @@ study-coherence-scala/
 │      ├─launch
 │      └─launch.ps1
 ├─.gitignore
+└─README.md
+
+
+study-coherence-scala/
+├─gradle
+│  └─wrapper
+│      ├─gradle-wrapper.jar
+│      └─gradle-wrapper.properties
 ├─gradlew
 ├─gradlew.bat
-├─README.md
+├─gradle.properties       gradle環境設定
+├─build.gradle            ビルド設定
+└─settings.gradle         マルチプロジェクト設定
+
+
+study-coherence-scala/
+├─project/
+│  ├─build.properties    sbt環境設定
+│  ├─Build.scala         ビルド設定
+│  └─Package.scala
+├─sbt/
+│  └─sbt-launch.jar
 ├─sbtl
 └─sbtl.bat
 
