@@ -8,6 +8,9 @@ allprojects {
 
     repositories {
         mavenCentral()
+        flatDir {
+            dirs "$rootDir/lib"
+        }
     }
 }
 
@@ -17,9 +20,9 @@ subprojects {
     //apply plugin: 'findbugs'
 
     dependencies {
-        compile fileTree(dir: "$rootDir/lib", include: '*.jar')
         compile 'org.scala-lang:scala-library:2.10.2'
         compile 'org.slf4j:slf4j-log4j12:1.7.5'
+        compile name: 'coherence'
         testCompile 'junit:junit:4.+'
         testCompile 'org.specs2:specs2_2.10:2.1'
         testCompile 'org.mockito:mockito-core:1.9.5'
@@ -35,4 +38,4 @@ task wrapper(type: Wrapper) {
     gradleVersion = '1.6'
 }
 
-//vim: ts=4 sw=4 et:
+// vim: ts=4 sw=4 et:
