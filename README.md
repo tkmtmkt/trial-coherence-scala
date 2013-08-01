@@ -43,15 +43,4 @@ study-coherence-scala/
 └─settings.gradle         マルチプロジェクト設定
 
 
-study-coherence-scala/
-├─project/
-│  ├─build.properties    sbt環境設定
-│  ├─Build.scala         ビルド設定
-│  └─Package.scala
-├─sbt/
-│  └─sbt-launch.jar
-├─sbtl
-└─sbtl.bat
-
-
 <!-- vim: set ft=markdown ts=4 sw=4 et: -->
