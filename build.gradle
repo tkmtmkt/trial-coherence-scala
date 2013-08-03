@@ -33,13 +33,15 @@ subprojects {
 
     jar {
         manifest {
-            attributes("Implementation-Title": project.name, "Implementation-Version": version)
+            attributes("Implementation-Title": project.name,
+                       "Implementation-Version": version)
         }
     }
 }
 
 dependencies {
-    runtime project(':main')
+    runtime project(':appMain')
+    runtime project(':appData')
 }
 
 task wrapper(type: Wrapper) {
@@ -47,4 +49,4 @@ task wrapper(type: Wrapper) {
     gradleVersion = '1.6'
 }
 
-// vim: ts=4 sw=4 et:
+//vim: set ts=4 sw=4 et:

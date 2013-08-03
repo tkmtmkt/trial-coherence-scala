@@ -1,3 +1,12 @@
-include 'main'
+include 'appMain'
+include 'appData'
 
-//vim: ts=4 sw=4 et:
+rootProject.children.each {project ->
+    String fileBaseName = project.name.replaceAll("\\p{Upper}") { "-${it.toLowerCase()}" }
+    String projectDirName = "subprojects/$fileBaseName"
+    project.projectDir = new File(settingsDir, projectDirName)
+    project.buildFileName = "${fileBaseName}.gradle"
+    assert project.projectDir.isDirectory()
+    assert project.buildFile.isFile()
+}
+//vim: set ts=4 sw=4 et:
