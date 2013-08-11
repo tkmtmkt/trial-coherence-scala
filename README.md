@@ -4,43 +4,63 @@ study-coherence-scala
 Build
 -----
 
-./sbtl package-data
 ./gradlew jar
+
 
 ディレクトリ構成
 ----------------
 
-study-coherence-scala/
-├─lib/
-├─main/
-│  └─src/
-│      ├─main/
-│      │  ├─java/
-│      │  ├─resources/
-│      │  └─scala/
-│      └─test
-│          └─scala/
-├─src/
-│  └─script/
-│      ├─cache-server.ps1
-│      ├─classworld.conf
-│      ├─console.ps1
-│      ├─launch
-│      └─launch.ps1
-├─.gitignore
-└─README.md
+### ソースコード
+
+    study-coherence-scala/
+    ├─lib/                    自動管理しない外部ライブラリ
+    │  └─.gitkeep
+    ├─subprojects/            サブプロジェクト
+    │  ├─app-data/
+    │  │  └─src/
+    │  │      ├─main/
+    │  │      │  ├─java/
+    │  │      │  ├─resources/
+    │  │      │  └─scala/
+    │  │      └─test/
+    │  │          └─scala/
+    │  └─app-main/
+    │      └─src/
+    │          ├─main/
+    │          │  ├─java/
+    │          │  ├─resources/
+    │          │  └─scala/
+    │          └─test/
+    │              └─scala/
+    ├─src/
+    │  └─dist/
+    │      ├─cache-server.ps1
+    │      ├─console.ps1
+    │      ├─launch
+    │      └─launch.ps1
+    ├─.gitignore
+    └─README.md
 
 
-study-coherence-scala/
-├─gradle
-│  └─wrapper
-│      ├─gradle-wrapper.jar
-│      └─gradle-wrapper.properties
-├─gradlew
-├─gradlew.bat
-├─gradle.properties       gradle環境設定
-├─build.gradle            ビルド設定
-└─settings.gradle         マルチプロジェクト設定
+### gradle設定
+
+    study-coherence-scala/
+    ├─gradle/
+    │  └─wrapper/
+    │      ├─gradle-wrapper.jar
+    │      └─gradle-wrapper.properties
+    ├─build.gradle            ビルド設定
+    ├─gradlew                 gradle起動スクリプト（Unix）
+    ├─gradlew.bat             gradle起動スクリプト（Windows）
+    ├─gradle.properties       gradle環境設定
+    └─settings.gradle         マルチプロジェクト設定
 
 
-<!-- vim: set ft=markdown ts=4 sw=4 et: -->
+参考
+----
+
+* [製品情報 - Oracle Coherence](http://www.oracle.com/technetwork/jp/middleware/coherence/overview/index.html)
+* [Oracle Coherenceドキュメント・ライブラリ](http://docs.oracle.com/cd/E26853_01/index.htm)
+* [coherence-community (Oracle Coherence Community)](https://github.com/coherence-community/)
+
+<!-- vim: set ts=4 sw=4 et: -->
