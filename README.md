@@ -1,4 +1,4 @@
-study-coherence-scala
+trial-coherence-scala
 =====================
 
 Build
